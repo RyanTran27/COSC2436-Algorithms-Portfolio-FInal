@@ -1,0 +1,86 @@
+# Lab Report — Chapter 3: Recursion
+
+*Complete both sections and commit this file with your code.*
+
+## Test Results
+
+*Paste your output, including part of the call-stack trace.*
+
+```text
+Finding 2023.pdf:
+-> entering: /root
+  -> entering: /root/readme.txt
+  <- exiting: /root/readme.txt
+  -> entering: /root/photo.jpg
+  <- exiting: /root/photo.jpg
+  -> entering: /root/documents
+    -> entering: /root/documents/resume.docx
+    <- exiting: /root/documents/resume.docx
+    -> entering: /root/documents/taxes
+      -> entering: /root/documents/taxes/2022.pdf
+      <- exiting: /root/documents/taxes/2022.pdf
+      -> entering: /root/documents/taxes/2023.pdf
+      <- exiting: /root/documents/taxes/2023.pdf
+    <- exiting: /root/documents/taxes
+  <- exiting: /root/documents
+<- exiting: /root
+Result: /root/documents/taxes/2023.pdf
+
+Finding missing.txt:
+-> entering: /root
+  -> entering: /root/readme.txt
+  <- exiting: /root/readme.txt
+  -> entering: /root/photo.jpg
+  <- exiting: /root/photo.jpg
+  -> entering: /root/documents
+    -> entering: /root/documents/resume.docx
+    <- exiting: /root/documents/resume.docx
+    -> entering: /root/documents/taxes
+      -> entering: /root/documents/taxes/2022.pdf
+      <- exiting: /root/documents/taxes/2022.pdf
+      -> entering: /root/documents/taxes/2023.pdf
+      <- exiting: /root/documents/taxes/2023.pdf
+    <- exiting: /root/documents/taxes
+  <- exiting: /root/documents
+  -> entering: /root/music
+    -> entering: /root/music/song1.mp3
+    <- exiting: /root/music/song1.mp3
+  <- exiting: /root/music
+  -> entering: /root/empty_folder
+  <- exiting: /root/empty_folder
+<- exiting: /root
+Result: None
+
+Number of files:
+6
+
+Total file size:
+332
+
+File system tree:
+root
+  readme.txt
+  photo.jpg
+  documents
+    resume.docx
+    taxes
+      2022.pdf
+      2023.pdf
+  music
+    song1.mp3
+  empty_folder
+```
+
+## Reflection Questions
+
+1. Explain recursion to someone who has never programmed.
+
+Recursion is when a function solves a problem by calling itself on a smaller version of the same problem. It is like opening a box that contains another box, then continuing until you reach a box that does not contain any more boxes. That final situation is the base case, which tells the function when to stop calling itself.
+
+2. An empty folder is a legitimate base case, not an error. Why does treating it as an error break the program?
+
+An empty folder simply means there is nothing else inside it to search, so the function should stop and return normally. If the program treats an empty folder as an error, it may stop the entire search even though other folders still need to be checked. This would make the recursive search fail on valid folder structures.
+
+3. A folder nested 10,000 levels deep would crash your code. Why?
+
+Each recursive call adds another function call to the call stack. Python has a limit on how many recursive calls can be active at the same time, so a folder nested 10,000 levels deep would exceed that limit. This would cause a recursion depth error before the search could finish.
