@@ -1,0 +1,53 @@
+# Lab Report — Chapter 5: Hash Tables
+
+*Complete both sections and commit this file with your code.*
+
+## Test Results
+
+*Paste your cache hit/miss output and your collision comparison.*
+
+```text
+555-1234
+Not found
+Allowed to vote
+Allowed to vote
+Already voted!
+Allowed to vote
+Already voted!
+Duplicate attempts: 2
+MISS
+Contents of http://site.test/home
+HIT
+Contents of http://site.test/home
+MISS
+Contents of http://site.test/about
+MISS
+Contents of http://site.test/contact
+HIT
+Contents of http://site.test/home
+10
+20
+None
+0.6
+6
+3
+8
+4
+The thread 'MainThread' (1) has exited with code 0 (0x0).
+The program 'python.exe' has exited with code 0 (0x0).
+
+```
+
+## Reflection Questions
+
+1. **Explain a hash table to someone who has never programmed.**
+
+   A hash table is like a wall of numbered mailboxes where each item is sent to a specific box. The hash function is like the rule that decides which mailbox an item should go into based on its key. Once the correct location is known, the program can usually store or find the item very quickly.
+
+2. **Chapter 5 says lookups are fast "on average." When is that not true, and what makes it go wrong?**
+
+   Hash table lookups become slower when many different keys are sent to the same location, which causes collisions. If too many collisions occur, the program may have to search through several items instead of going directly to one value. A poor hash function or a table that is too full can make this problem worse.
+
+3. **Your page cache avoided repeating expensive work. Where have you seen caching in software you use?**
+
+   Caching is used in web browsers, streaming apps, and websites to save information that has already been loaded. For example, a browser may keep images or website files so it does not have to download them again every time you revisit a page. This makes software feel faster and reduces repeated work.
