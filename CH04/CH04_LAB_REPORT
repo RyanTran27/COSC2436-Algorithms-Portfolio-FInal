@@ -1,0 +1,44 @@
+# Lab Report — Chapter 4: Quicksort
+
+*Complete both sections and commit this file with your code.*
+
+## Test Results
+
+*Paste your benchmark table — all six rows, including any `RecursionError`.*
+
+```text
+Part 1: Divide & Conquer warm-ups
+recursive_sum: 52
+recursive_count: 12
+recursive_max: 10
+binary_search_recursive (target=8): 9
+binary_search_recursive (target=99): -1
+
+Part 2: Quicksort
+first pivot: [-3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+random pivot: [-3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+middle pivot: [-3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+Part 3: Benchmark
+Shape              Strategy     Result
+unsorted           first        0.018401 s
+unsorted           random       0.018445 s
+sorted             first        RecursionError
+sorted             random       0.002138 s
+reverse sorted     first        RecursionError
+reverse sorted     random       0.002108 s
+```
+
+## Reflection Questions
+
+1. **Explain quicksort to someone who has never programmed.**
+
+   Quicksort is like sorting a pile of papers by choosing one paper as a reference point, called the pivot. You separate the remaining papers into two groups: items that belong before the pivot and items that belong after it. Then you repeat the same process on each smaller group until everything is sorted.
+
+2. **A random pivot usually avoids the worst case. Why does randomness help here?**
+
+   Randomness makes it less likely that the pivot will repeatedly be one of the smallest or largest values in the list. If the pivot is usually somewhere near the middle, the list gets divided into more balanced sections. Balanced divisions reduce the amount of recursive work and help quicksort perform efficiently.
+
+3. **Where does sorting show up in software you actually use?**
+
+   Sorting appears in many applications, such as arranging search results, organizing files by name or date, and sorting products by price. It is also used in music apps, social media feeds, spreadsheets, and databases whenever information needs to be placed into a useful order.
