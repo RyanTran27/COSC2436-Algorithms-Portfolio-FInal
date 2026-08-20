@@ -1,0 +1,32 @@
+# Lab Report — Chapter 2: Selection Sort
+
+*Complete both sections and commit this file with your code.*
+
+## Test Results
+
+*Paste your sorted lists and your ranked artist output.*
+
+```text
+3
+0
+0
+[2, 3, 5, 6, 10]
+[]
+[1, 4, 4]
+[9, 1, 5]
+['Radiohead', 'Kishore Kumar', 'Wilco', 'Neutral Milk Hotel', 'Beck', 'The Strokes', 'The Black Keys']
+```
+
+## Reflection Questions
+
+1. Explain selection sort to someone who has never programmed.
+
+Selection sort is like sorting a hand of cards by repeatedly finding the smallest card and placing it in the correct position. The program searches through the unsorted items, selects the smallest one, and moves it into the sorted part of the list. It repeats this process until every item is in order.
+
+2. Your list gets twice as long. Does selection sort do twice the work, or more?
+
+Selection sort does more than twice the work when the list becomes twice as long. It must make more passes through the list, and each pass also has more items to examine. Because of this, the amount of work grows much faster as the size of the list increases.
+
+3. Chapter 2 says arrays are used more often than linked lists in practice. Based on what you built, why would that be?
+
+Arrays make it easy to access an item directly by its position, which is useful when working with sorting algorithms. They are also simple to loop through and generally work efficiently with modern computer memory. Linked lists are useful for certain insertions and deletions, but accessing a specific item requires moving through the list one node at a time.
