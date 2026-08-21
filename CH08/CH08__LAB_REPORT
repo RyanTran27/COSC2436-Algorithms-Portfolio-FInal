@@ -1,0 +1,40 @@
+# Lab Report — Chapter 8: Balanced Trees
+
+*Complete both sections and commit this file with your code.*
+
+## Test Results
+
+*Paste your output — both tree heights, comparison counts, and the AVL result.*
+
+```text
+=== PART 1: Basic BST operations ===
+[20, 30, 40, 50, 70]
+3
+True
+3
+=== PART 2: Same values, different insertion order ===
+Tree A height: 4
+Tree B height: 12
+Tree A in-order: [10, 20, 25, 30, 35, 40, 45, 50, 60, 65, 70, 80]
+Tree B in-order: [10, 20, 25, 30, 35, 40, 45, 50, 60, 65, 70, 80]
+Tree A search comparisons for largest value: 3
+Tree B search comparisons for largest value: 12
+=== PART 3: AVL rotations fix the shape ===
+AVL tree height after sorted insertion: 4
+=== REFLECTION ===
+See comments above for the reflection table.
+```
+
+## Reflection Questions
+
+1. **Explain a binary search tree to someone who has never programmed.**
+
+   A binary search tree is like playing a “guess higher or guess lower” game. Each node is like one guess containing a value. Smaller values go to the left and larger values go to the right, allowing the program to quickly decide which direction to search.
+
+2. **A tree built from sorted input performs no better than a plain list. Explain why, using your own two trees.**
+
+   My tree built from mixed-order values spreads its nodes between the left and right sides, which keeps the tree shorter. The tree built from sorted values places almost every new value on the same side, making it look like a long list. Because of this, searching the sorted-input tree may require checking many nodes instead of eliminating large parts of the tree.
+
+3. **Chapter 8 says balanced trees are used for database indexes. Based on what you built, why is a tree a good fit for that job?**
+
+   A balanced tree keeps values organized so the program can quickly decide whether to search left or right. This means a database does not have to check every record one at a time when searching for information. Keeping the tree balanced also prevents it from becoming a long chain, which helps searches remain fast even when there are many records.
