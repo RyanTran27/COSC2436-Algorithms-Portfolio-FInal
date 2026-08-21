@@ -1,0 +1,30 @@
+# Lab Report — Chapter 6: Breadth-First Search
+
+*Complete both sections and commit this file with your code.*
+
+## Test Results
+
+*Paste your output for all three searches — reachable, distance, and full path.*
+
+```text
+True
+True
+2
+['you', 'claire', 'thom', 'diego']
+False
+[]
+```
+
+## Reflection Questions
+
+1. **Explain breadth-first search to someone who has never programmed.**
+
+   Breadth-first search is like asking your friends if they know someone you are looking for, then asking their friends, and continuing outward. The queue is like a waiting line that keeps track of who needs to be checked next. This allows BFS to search the closest people first before moving farther away.
+
+2. **Two people in your network each know the other. Walk through what happens without the `searched` set.**
+
+   Without the `searched` set, the program could keep checking the same two people repeatedly. The first person would add the second person to the queue, and the second person could add the first person back again. This creates a cycle that could continue forever and prevent the search from finishing.
+
+3. **Where does this show up in real software?**
+
+   BFS can be used for finding the shortest route between locations. Each location can be represented as a node, and the connections between locations represent possible routes. BFS checks nearby locations first, allowing it to find a route with the fewest connections or hops.
