@@ -1,0 +1,43 @@
+# Lab Report — Chapter 11: Dynamic Programming
+
+*Complete both sections and commit this file with your code.*
+
+## Test Results
+
+*Paste your call counts, your printed grid, and both string results.*
+
+```text
+Part 1: Scheduled classes
+[('Art', 9.0, 10.0), ('Math', 10.0, 11.0), ('Music', 11.0, 12.0)]
+Part 2: Greedy knapsack choice
+[('stereo', 3000, 4)]
+Part 2: Greedy knapsack value
+3000
+Part 2: Brute-force knapsack choice
+[('laptop', 2000, 3), ('guitar', 1500, 1)]
+Part 2: Brute-force knapsack value
+3500
+Part 2: Gap between brute force and greedy
+500
+Part 3: Stations chosen, in order
+['kone', 'ktwo', 'kthree', 'kfive']
+Part 3: Exact solver combinations to check for 5 stations
+32
+Part 3: Exact solver combinations to check for 20 stations
+1048576
+Part 3: Exact solver combinations to check for 100 stations
+1267650600228229401496703205376
+Reflection
+The Huffman tree construction algorithm is greedy because it repeatedly merges the two lowest-frequency nodes, and it produces an exactly optimal prefix code rather than an approximation.
+```
+
+## Reflection Questions
+
+1. **Explain dynamic programming to someone who has never programmed.**
+   - *Writing answers down so you never solve the same problem twice is the core of it.*
+
+2. **What has to be true about a problem for the grid to work at all?**
+   - *Think about what the grid assumes about the subproblems.*
+
+3. **Where does this show up in real software?**
+   - *Spell-check suggestions, `git diff`, DNA sequence comparison — pick one and say how it maps.*
