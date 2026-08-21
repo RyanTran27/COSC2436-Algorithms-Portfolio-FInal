@@ -1,0 +1,61 @@
+# Lab Report — Chapter 7: Trees and Huffman Coding
+
+*Complete both sections and commit this file with your code.*
+
+## Test Results
+
+*Paste your BFS and DFS orders, your encode/decode round trip, and your bit counts.*
+
+```text
+=== Part 1: Directory Traversal ===
+BFS order:
+root
+docs
+media
+web
+notes.txt
+todo.txt
+draft.docx
+photo.png
+song.mp3
+index.html
+style.css
+
+DFS order:
+root
+docs
+notes.txt
+todo.txt
+draft.docx
+media
+photo.png
+song.mp3
+web
+index.html
+style.css
+
+=== Part 2: DFS vs BFS Shortest Path ===
+DFS found target: target (took the FAR path)
+BFS found target: target (took the CLOSE path)
+
+=== Part 3: Huffman Coding ===
+Frequencies: {'a': 5, 'b': 2, 'r': 2, 'c': 1, 'd': 1}
+Codes: {'a': '0', 'c': '100', 'd': '101', 'r': '110', 'b': '111'}
+Encoded bitstring: 01111100100010101111100
+Decoded text: abracadabra
+Huffman bits: 23  vs  fixed-width bits: 88
+```
+
+## Reflection Questions
+
+1. **Explain the difference between BFS and DFS to someone who has never programmed.**
+
+   BFS is like searching a building floor by floor, checking every room on one floor before moving to the next. DFS is like choosing one hallway and following it as far as possible before going back and trying another hallway. BFS searches broadly, while DFS explores one path deeply before backtracking.
+
+2. **Why do frequent letters get shorter codes? Use your own code table.**
+
+   Huffman coding gives shorter binary codes to letters that appear more frequently and longer codes to letters that appear less often. This reduces the total number of bits needed to represent the text. In my code table, the most frequent characters receive shorter codes because they need to be encoded more often.
+
+3. **Your decoder reads a stream of bits with no separators and still gets it right. Why is there never any ambiguity?**
+
+   Huffman codes are prefix-free, meaning no character's code is the beginning of another character's code. As the decoder follows the Huffman tree, reaching a leaf means that one complete character has been found. It can then return to the root and continue reading the remaining bits without needing separators.
