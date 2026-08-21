@@ -1,0 +1,29 @@
+# Lab Report — Chapter 12: K-Nearest Neighbors
+
+*Complete both sections and commit this file with your code.*
+
+## Test Results
+
+*Paste your output — the k comparison, the before/after normalization results, and your recommendation.*
+
+```text
+[{'features': [6, 4], 'label': 'orange'}, {'features': [7, 3], 'label': 'orange'}, {'features': [6, 3], 'label': 'orange'}]
+orange
+dog
+cat
+dog
+standard
+premium
+likes
+4.666666666666667
+4.666666666666667
+```
+
+## Reflection Questions
+
+1. **Explain k-nearest neighbors to someone who has never programmed.**
+   - *"You're similar to the people around you" is the whole idea.*
+
+2. **Two classmates pick k = 1 and k = 15 on the same data and get different answers. What is each one doing wrong, or right?**
+
+3. **Chapter 12 says Netflix-style recommendations work this way. Describe how someone's viewing history becomes the "features."**
