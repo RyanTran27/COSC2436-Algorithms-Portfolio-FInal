@@ -1,0 +1,46 @@
+# Lab Report — Chapter 10: Greedy Algorithms
+
+*Complete both sections and commit this file with your code.*
+
+## Test Results
+
+*Paste your scheduling result, both knapsack answers side by side, your set cover, and your subset counts.*
+
+```text
+Part 1: Scheduled classes
+[('Art', 9.0, 10.0), ('Math', 10.0, 11.0), ('Music', 11.0, 12.0)]
+Part 2: Greedy knapsack choice
+[('stereo', 3000, 4)]
+Part 2: Greedy knapsack value
+3000
+Part 2: Brute-force knapsack choice
+[('laptop', 2000, 3), ('guitar', 1500, 1)]
+Part 2: Brute-force knapsack value
+3500
+Part 2: Gap between brute force and greedy
+500
+Part 3: Stations chosen, in order
+['kone', 'ktwo', 'kthree', 'kfive']
+Part 3: Exact solver combinations to check for 5 stations
+32
+Part 3: Exact solver combinations to check for 20 stations
+1048576
+Part 3: Exact solver combinations to check for 100 stations
+1267650600228229401496703205376
+Reflection
+The Huffman tree construction algorithm is greedy because it repeatedly merges the two lowest-frequency nodes, and it produces an exactly optimal prefix code rather than an approximation.
+```
+
+## Reflection Questions
+
+1. **Explain the greedy strategy to someone who has never programmed.**
+
+   A greedy strategy solves a problem by choosing what looks like the best option at each step. It is like filling a schedule by repeatedly choosing the activity that finishes earliest so there is more time available for other activities. Once a choice is made, the algorithm continues forward without going back to change it.
+
+2. **Greedy was perfect for scheduling and wrong for the knapsack. What changed about the problem?**
+
+   In scheduling, choosing the activity that finishes earliest leaves the most room for other activities, so the greedy choice leads to an optimal solution. In the knapsack problem, choosing the item that looks best first can prevent a better combination of items from fitting later. The value of a knapsack choice depends on how it combines with other choices, so a greedy decision is not always optimal.
+
+3. **You already wrote a greedy algorithm in an earlier lab — building the Huffman tree in Chapter 7 repeatedly merges the two lowest-frequency nodes. Is that one exactly optimal, or an approximation?**
+
+   Huffman coding is a greedy algorithm that produces an **exactly optimal** prefix code for the given character frequencies. Repeatedly combining the two lowest-frequency nodes results in the minimum total weighted code length. Unlike some greedy algorithms that only approximate the best solution, Huffman coding guarantees an optimal result for this problem.
